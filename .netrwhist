@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/home/ralvescosta/Desktop/Rafael/go_webapi/cmd'
+let g:netrw_dirhist_3='/home/ralvescosta/Desktop/Rafael/go_webapi'
+let g:netrw_dirhist_2='/home/ralvescosta/Desktop/Rafael/go_webapi/cmd'
+let g:netrw_dirhist_1='/home/ralvescosta/Desktop/Rafael/go_webapi'
+let g:netrw_dirhist_0='/home/ralvescosta/Desktop/Rafael/go_webapi/cmd'
+let g:netrw_dirhist_9='/home/ralvescosta/Desktop/Rafael/go_webapi'
+let g:netrw_dirhist_8='/home/ralvescosta/Desktop/Rafael/go_webapi/cmd'
+let g:netrw_dirhist_7='/home/ralvescosta/Desktop/Rafael/go_webapi'
+let g:netrw_dirhist_6='/home/ralvescosta/Desktop/Rafael/go_webapi/cmd'
+let g:netrw_dirhist_5='/home/ralvescosta/Desktop/Rafael/go_webapi'
