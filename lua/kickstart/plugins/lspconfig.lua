@@ -208,7 +208,6 @@ return {
         clangd = {},
         gopls = {},
         pyright = {},
-        rust_analyzer = {},
         ts_ls = {},
         terraformls = {},
         yamlls = {},
