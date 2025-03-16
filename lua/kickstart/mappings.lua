@@ -44,3 +44,12 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+
+-- ######## LINES MOVE ###########
+-- NORMAL mode: Move the current line down/up
+vim.keymap.set('n', '<A-j>', ':m .+1<CR>==', { desc = 'Move line down' })
+vim.keymap.set('n', '<A-k>', ':m .-2<CR>==', { desc = 'Move line up' })
+-- VISUAL mode: Move the selected block down/up
+vim.keymap.set('v', '<A-j>', ":m '>+1<CR>gv=gv", { desc = 'Move selection down' })
+vim.keymap.set('v', '<A-k>', ":m '<-2<CR>gv=gv", { desc = 'Move selection up' })
+-- ###########################
