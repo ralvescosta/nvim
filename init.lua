@@ -17,25 +17,11 @@ require('lazy').setup({
   { import = 'kickstart.plugins' },
   { import = 'custom.plugins' },
 }, {
+  checker = {
+    enabled = true,
+    notify = false,
+  },
   ui = {
-    icons = vim.g.have_nerd_font and {} or {
-      cmd = '⌘',
-      config = '🛠',
-      event = '📅',
-      ft = '📂',
-      init = '⚙',
-      keys = '🗝',
-      plugin = '🔌',
-      runtime = '💻',
-      require = '🌙',
-      source = '📄',
-      start = '🚀',
-      task = '📌',
-      lazy = '💤 ',
-    },
+    icons = vim.g.have_nerd_font,
   },
 })
-
--- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et
---
