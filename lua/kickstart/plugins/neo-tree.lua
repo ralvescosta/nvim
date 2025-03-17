@@ -23,6 +23,21 @@ return {
       filtered_items = {
         hide_dotfiles = false,
       },
+      renderers = {
+        directory = {
+          { 'indent' },
+          { 'icon' },
+          {
+            'name',
+            use_git_status_colors = true,
+            zindex = 10,
+            highlight = 'NeoTreeDirectoryName',
+            callback = function(item)
+              return vim.fn.fnamemodify(item.path, ':t') -- Shows only the folder name
+            end,
+          },
+        },
+      },
     },
   },
 }
