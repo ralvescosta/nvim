@@ -6,7 +6,19 @@ return {
     config = function()
       local lint = require 'lint'
       lint.linters_by_ft = {
-        markdown = { 'markdownlint' },
+        markdown = { 'markdownlint', 'cspell' },
+        go = { 'cspell' },
+        rust = { 'cspell' },
+        lua = { 'cspell' },
+        typescript = { 'cspell' },
+        javascript = { 'cspell' },
+        python = { 'cspell' },
+        java = { 'cspell' },
+        terraform = { 'cspell' },
+        yaml = { 'cspell' },
+        proto = { 'cspell' },
+        graphql = { 'cspell' },
+        text = { 'cspell' },
       }
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,
