@@ -251,6 +251,7 @@ return {
         'golines',
         'goimports-reviser',
         'cspell',
+        'rust-analyzer',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -260,6 +261,10 @@ return {
         handlers = {
           function(server_name)
             local server = servers[server_name] or {}
+            -- This configuration is required since the rustaceanvim not work properly with lsp
+            if server_name == 'rust_analyzer' then
+              return
+            end
             -- This handles overriding only values explicitly passed
             -- by the server configuration above. Useful when disabling
             -- certain features of an LSP (for example, turning off formatting for ts_ls)
