@@ -21,7 +21,8 @@ require('lazy').setup({
     enabled = true,
     notify = false,
   },
-  ui = {
-    icons = vim.g.have_nerd_font,
-  },
 })
+
+-- The line beneath this is called `modeline`. See `:help modeline`
+-- vim: ts=2 sts=2 sw=2 et
+--
