@@ -13,6 +13,11 @@ return {
         topdelete = { text = '‾' },
         changedelete = { text = '~' },
       },
+      watch_gitdir = {
+        enable = true,
+        interval = 1000,
+        follow_files = true,
+      },
       on_attach = function(bufnr)
         local gitsigns = require 'gitsigns'
 
@@ -63,7 +68,6 @@ return {
         map('n', '<leader>tb', gitsigns.toggle_current_line_blame, { desc = '[T]oggle git show [b]lame line' })
         map('n', '<leader>tD', gitsigns.preview_hunk_inline, { desc = '[T]oggle git show [D]eleted' })
 
-        --
         vim.api.nvim_create_autocmd('BufWritePost', {
           callback = function()
             require('gitsigns').refresh()
