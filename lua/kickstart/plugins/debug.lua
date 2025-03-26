@@ -19,6 +19,7 @@ return {
     {
       '<F5>',
       function()
+        vim.cmd 'Neotree close'
         require('dap').continue()
       end,
       desc = 'Debug: Start/Continue',
@@ -65,6 +66,20 @@ return {
         require('dapui').toggle()
       end,
       desc = 'Debug: See last session result.',
+    },
+    {
+      '<leader>df',
+      function()
+        require('dapui').float_element 'scopes'
+      end,
+      desc = 'Debug: Open scopes floating window',
+    },
+    {
+      '<leader>de',
+      function()
+        require('dapui').eval()
+      end,
+      desc = 'Debug: Open evaluating floating window',
     },
   },
   config = function()
