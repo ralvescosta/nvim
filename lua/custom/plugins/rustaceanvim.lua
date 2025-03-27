@@ -56,8 +56,8 @@ return {
             app_name = function()
               return get_program_name()
             end,
-            rust_env = 'local',
-            rust_backtrace = 'full',
+            RUST_ENV = 'local',
+            RUST_BACKTRACE = 'full',
           },
           cwd = '${workspaceFolder}',
         },
