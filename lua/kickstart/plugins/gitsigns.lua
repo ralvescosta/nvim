@@ -15,7 +15,7 @@ return {
       },
       watch_gitdir = {
         enable = true,
-        interval = 1000,
+        interval = 500,
         follow_files = true,
       },
       on_attach = function(bufnr)
