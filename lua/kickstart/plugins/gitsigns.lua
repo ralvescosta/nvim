@@ -18,6 +18,7 @@ return {
         interval = 500,
         follow_files = true,
       },
+      --
       on_attach = function(bufnr)
         local gitsigns = require 'gitsigns'
 
