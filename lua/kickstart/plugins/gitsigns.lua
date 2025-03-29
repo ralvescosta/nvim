@@ -29,10 +29,6 @@ return {
         end
 
         -- Navigation
-        --
-        --
-        --:w
-        --
         map('n', ']c', function()
           if vim.wo.diff then
             vim.cmd.normal { ']c', bang = true }
