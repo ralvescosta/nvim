@@ -224,3 +224,9 @@ omitempty
 xml
 iface
 unprovisioned_pub_topic
+mqtt
+mqtt
+NewMQTTDispatcher
+mqtt
+pkgs
+mqtt
