@@ -87,6 +87,22 @@ return {
           cwd = '${workspaceFolder}',
         },
       }
+
+      -- Reset binary name after session ends
+      dap.listeners.after.event_terminated['reset-rust-program'] = function()
+        vim.g._last_rust_program = nil
+        vim.notify('Clearing previous Rust binary name', vim.log.levels.DEBUG)
+      end
+
+      dap.listeners.after.event_exited['reset-rust-program'] = function()
+        vim.g._last_rust_program = nil
+        vim.notify('Clearing previous Rust binary name', vim.log.levels.DEBUG)
+      end
+
+      dap.listeners.after.disconnect['reset-rust-program'] = function()
+        vim.g._last_rust_program = nil
+        vim.notify('Clearing previous Rust binary name', vim.log.levels.DEBUG)
+      end
       --
     end,
   },
