@@ -249,3 +249,10 @@ AMQP_HEADERS_MAX_LENGTH_BYTES
 AMQP
 nvim
 mfussenegger
+ds
+ValidateSignatureXMLMarshal
+dto
+emv
+gokit
+ralvescosta
+uber
