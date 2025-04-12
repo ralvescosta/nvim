@@ -34,7 +34,7 @@ External Requirements:
   - etc.
 
 > **NOTE**
-> See [Install Recipes](#Install-Recipes) for additional Windows and Linux specific notes
+> See [Install Recipes](#Install-Recipes) for additional Linux specific notes
 > and quick install snippets
 
 ### Install ralvescosta nvim
@@ -49,9 +49,6 @@ Neovim's configurations are located under the following paths, depending on your
 | Linux | `$XDG_CONFIG_HOME/nvim`, `~/.config/nvim` |
 
 #### Clone ralvescosta.nvim
-> **NOTE**
-> If following the recommended step above (i.e., forking the repo), replace
-> `nvim-lua` with `<your_github_username>` in the commands below
 
 ```sh
 git clone https://github.com:ralvescosta/nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
