@@ -1,4 +1,4 @@
-# kbckstart.nvim
+# ralvescosta.nvim
 
 ## Introduction
 
@@ -48,20 +48,6 @@ Neovim's configurations are located under the following paths, depending on your
 | :- | :--- |
 | Linux | `$XDG_CONFIG_HOME/nvim`, `~/.config/nvim` |
 
-#### Recommended Step
-
-[Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) this repo
-so that you have your own copy that you can modify, then install by cloning the
-fork to your machine using one of the commands below, depending on your OS.
-
-> **NOTE**
-> Your fork's URL will be something like this:
-> `https://github.com/<your_github_username>/kickstart.nvim.git`
-
-You likely want to remove `lazy-lock.json` from your fork's `.gitignore` file
-too - it's ignored in the kickstart repo to make maintenance easier, but it's
-[recommended to track it in version control](https://lazy.folke.io/usage/lockfile).
-
 #### Clone ralvescosta.nvim
 > **NOTE**
 > If following the recommended step above (i.e., forking the repo), replace
@@ -86,10 +72,6 @@ the current plugin status. Hit `q` to close the window.
 Read through the `init.lua` file in your configuration folder for more
 information about extending and exploring Neovim. That also includes
 examples of adding popularly requested plugins.
-
-> [!NOTE]
-> For more information about a particular plugin check its repository's documentation.
-
 
 ### Getting Started
 
@@ -140,6 +122,18 @@ After installing all the dependencies continue with the [Install Kickstart](#Ins
 sudo add-apt-repository ppa:neovim-ppa/unstable -y
 sudo apt update
 sudo apt install make gcc ripgrep unzip git xclip neovim
+go install github.com/jesseduffield/lazygit@latest
+go install github.com/google/yamlfmt/cmd/yamlfmt@latest
+go install github.com/jessfraz/dockfmt@latest
+go install golang.org/x/tools/cmd/goimports@latest
+go install github.com/jesseduffield/lazydocker@latest
+asdf reshim golang
+npm install -g cspell
+asdf reshim nodejs
+cargo install taplo-cli
+sudo sysctl -w fs.inotify.max_user_watches=1048576
+sudo sysctl -w fs.inotify.max_user_instances=1024
+sudo sysctl -p
 ```
 </details>
 <details><summary>Debian Install Steps</summary>
