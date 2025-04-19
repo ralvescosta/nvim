@@ -5,12 +5,14 @@ return {
     version = false,
     opts = {
       provider = 'openai',
+      auto_suggestions_provider = 'openai',
       openai = {
         endpoint = 'https://api.openai.com/v1',
         model = 'gpt-4o',
         timeout = 30000, -- timeout in milliseconds
         temperature = 0, -- adjust if needed
         max_tokens = 8192,
+        --do something for me
         -- reasoning_effort = "high" -- only supported for reasoning models (o1, etc.)
       },
     },
