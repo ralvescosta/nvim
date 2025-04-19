@@ -2,7 +2,7 @@ return {
   {
     'github/copilot.vim',
     config = function()
-      vim.g.copilot_enabled = false
+      vim.g.copilot_enabled = true
 
       vim.api.nvim_create_user_command('CopilotToggle', function()
         if vim.g.copilot_enabled == 1 then
