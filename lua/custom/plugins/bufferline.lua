@@ -1,24 +1,24 @@
 return {
-  {
-    'akinsho/bufferline.nvim',
-    version = '*',
-    dependencies = 'nvim-tree/nvim-web-devicons',
-    config = function()
-      require('bufferline').setup {
-        options = {
-          numbers = 'ordinal',
-          diagnostics = 'nvim_lsp',
-          hover = {
-            enabled = true,
-            delay = 200,
-            reveal = { 'close' },
-          },
-        },
-      }
-
-      vim.keymap.set('n', '<Tab>', ':BufferLineCycleNext<CR>', { desc = '[B]ufferLine next' })
-      vim.keymap.set('n', '<S-Tab>', ':BufferLineCyclePrev<CR>', { desc = '[B]ufferLine prev' })
-      vim.keymap.set('n', '<Leader>x', ':bp | bd #<CR>', { desc = '[B]ufferLine close current' })
-    end,
-  },
+  -- {
+  --   'akinsho/bufferline.nvim',
+  --   version = '*',
+  --   dependencies = 'nvim-tree/nvim-web-devicons',
+  --   config = function()
+  --     require('bufferline').setup {
+  --       options = {
+  --         numbers = 'ordinal',
+  --         diagnostics = 'nvim_lsp',
+  --         hover = {
+  --           enabled = true,
+  --           delay = 200,
+  --           reveal = { 'close' },
+  --         },
+  --       },
+  --     }
+  --
+  --     vim.keymap.set('n', '<Tab>', ':BufferLineCycleNext<CR>', { desc = '[B]ufferLine next' })
+  --     vim.keymap.set('n', '<S-Tab>', ':BufferLineCyclePrev<CR>', { desc = '[B]ufferLine prev' })
+  --     vim.keymap.set('n', '<Leader>x', ':bp | bd #<CR>', { desc = '[B]ufferLine close current' })
+  --   end,
+  -- },
 }
