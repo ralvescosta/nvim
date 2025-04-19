@@ -12,11 +12,11 @@ return {
           local bufnr = args.buf
           local name = vim.api.nvim_buf_get_name(bufnr)
           if name:match 'lazygit' then
-            vim.cmd 'Neotree git_status refresh'
+            require('neo-tree.sources.git_status.commands').refresh()
           end
         end,
       })
+      --
     end,
-    --
   },
 }
