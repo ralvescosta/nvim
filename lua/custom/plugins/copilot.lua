@@ -1,20 +1,35 @@
 return {
   {
-    'github/copilot.vim',
+    'zbirenbaum/copilot.lua',
+    cmd = 'Copilot',
+    event = 'InsertEnter',
     config = function()
-      vim.g.copilot_enabled = true
+      require('copilot').setup {
+        suggestion = {
+          enabled = true,
+          auto_trigger = true,
+          debounce = 75,
+          keymap = {
+            accept = '<C-y>',
+            next = '<C-j>',
+            prev = '<C-k>',
+            dismiss = '<C-h>',
+          },
+        },
+        filetypes = {
+          yaml = true,
+          markdown = true,
+          help = false,
+          gitcommit = false,
+          gitrebase = false,
+          hgcommit = false,
+          svn = false,
+          cvs = false,
+          ['.'] = false,
+        },
+      }
 
-      vim.api.nvim_create_user_command('CopilotToggle', function()
-        if vim.g.copilot_enabled == 1 then
-          vim.g.copilot_enabled = 0
-          print 'Copilot: OFF'
-        else
-          vim.g.copilot_enabled = 1
-          print 'Copilot: ON'
-        end
-      end, {})
-
-      vim.keymap.set('n', '<leader>tc', ':CopilotToggle<CR>', { desc = '[T]oggle [C]opilot', silent = true })
+      vim.keymap.set('n', '<leader>tc', ':Copilot toggle<CR>', { desc = '[T]oggle [C]opilot', silent = true })
     end,
   },
 }

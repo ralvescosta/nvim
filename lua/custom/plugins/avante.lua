@@ -4,16 +4,11 @@ return {
     event = 'VeryLazy',
     version = false,
     opts = {
-      provider = 'openai',
-      auto_suggestions_provider = 'openai',
-      openai = {
-        endpoint = 'https://api.openai.com/v1',
-        model = 'gpt-4o',
-        timeout = 30000, -- timeout in milliseconds
-        temperature = 0, -- adjust if needed
+      provider = 'copilot',
+      cursor_applying_provider = 'copilot',
+      copilot = {
+        temperature = 0,
         max_tokens = 8192,
-        --do something for me
-        -- reasoning_effort = "high" -- only supported for reasoning models (o1, etc.)
       },
     },
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
