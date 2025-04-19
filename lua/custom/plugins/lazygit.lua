@@ -16,7 +16,7 @@ return {
           end
         end,
       })
-      -- ---
+      -- other comments
     end,
   },
 }
