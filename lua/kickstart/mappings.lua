@@ -54,3 +54,11 @@ vim.keymap.set('n', '<A-k>', ':m .-2<CR>==', { desc = 'Move line up' })
 vim.keymap.set('v', '<A-j>', ":m '>+1<CR>gv=gv", { desc = 'Move selection down' })
 vim.keymap.set('v', '<A-k>', ":m '<-2<CR>gv=gv", { desc = 'Move selection up' })
 -- ###########################
+
+-- -- ######### BUFFER ###########
+vim.keymap.set('n', '<leader>x', function()
+  local current = vim.api.nvim_get_current_buf()
+  vim.cmd 'bnext'
+  vim.api.nvim_buf_delete(current, { force = false })
+end, { desc = 'Close current buffer and go to next', silent = true })
+-- ###########################
