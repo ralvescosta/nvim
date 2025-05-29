@@ -6,8 +6,14 @@ return {
     pft = 'rust',
     config = function()
       local mason_registry = require 'mason-registry'
-      local codelldb = mason_registry.get_package 'codelldb'
-      local extension_path = codelldb:get_install_path() .. '/extension/'
+
+      local mason_base = vim.fn.expand '$MASON'
+      if mason_base == '' then
+        mason_base = vim.fn.stdpath 'data' .. '/mason'
+      end
+
+      local codelldb_install = mason_base .. '/packages/codelldb'
+      local extension_path = codelldb_install .. '/extension/'
       local codelldb_path = extension_path .. 'adapter/codelldb'
       local liblldb_path = extension_path .. 'lldb/lib/liblldb.so'
       local cfg = require 'rustaceanvim.config'
