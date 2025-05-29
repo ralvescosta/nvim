@@ -30,7 +30,7 @@ return {
           svn = false,
           cvs = false,
           json = false,
-          ['.'] = false,
+          ['*'] = false,
         },
       }
 
