@@ -18,11 +18,7 @@ return {
           },
         },
         filetypes = {
-          yaml = true,
-          markdown = true,
-          golang = true,
-          rust = true,
-          lua = true,
+          ['*'] = true,
           help = false,
           gitcommit = false,
           gitrebase = false,
@@ -30,7 +26,6 @@ return {
           svn = false,
           cvs = false,
           json = false,
-          ['*'] = false,
         },
       }
 
