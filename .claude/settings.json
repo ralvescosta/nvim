@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(nvim --headless *)",
+      "Bash(ls ~/.local/share/nvim/lazy/)",
+      "Bash(ls ~/.local/share/nvim/lazy/*)",
+      "Read(/home/ralvescosta/.local/share/nvim/**)",
+      "Bash(cargo search *)",
+      "Bash(cargo info *)",
+      "Bash(go doc *)",
+      "Bash(npm info *)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'Tip: verify with nvim --headless \"+Lazy! sync\" +qa 2>&1 | head -20'"
+          }
+        ]
+      }
+    ]
+  }
+}
