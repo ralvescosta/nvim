@@ -24,6 +24,17 @@ return {
       { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
     },
     config = function()
+      -- Compatibility for Neovim Treesitter API changes used by telescope previewers.
+      local ok_parsers, ts_parsers = pcall(require, 'nvim-treesitter.parsers')
+      if ok_parsers and ts_parsers and type(ts_parsers.ft_to_lang) ~= 'function' then
+        ts_parsers.ft_to_lang = function(ft)
+          if vim.treesitter and vim.treesitter.language and vim.treesitter.language.get_lang then
+            return vim.treesitter.language.get_lang(ft) or ft
+          end
+          return ft
+        end
+      end
+
       -- Telescope is a fuzzy finder that comes with a lot of different things that
       -- it can fuzzy find! It's more than just a "file finder", it can search
       -- many different aspects of Neovim, your workspace, LSP, and more!
@@ -49,11 +60,15 @@ return {
         -- You can put your default mappings / updates / etc. in here
         --  All the info you're looking for is in `:help telescope.setup()`
         --
-        -- defaults = {
-        --   mappings = {
-        --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-        --   },
-        -- },
+        defaults = {
+          preview = {
+            -- Avoid Telescope previewer crash on nvim-treesitter API mismatch.
+            treesitter = false,
+          },
+          -- mappings = {
+          --   i = { ['<c-enter>'] = 'to_fuzzy_refine' },
+          -- },
+        },
         -- pickers = {}
         extensions = {
           ['ui-select'] = {
