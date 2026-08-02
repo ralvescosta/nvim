@@ -251,6 +251,7 @@ return {
         'golines',
         'goimports-reviser',
         'cspell',
+        'markdownlint',
         'rust-analyzer',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }

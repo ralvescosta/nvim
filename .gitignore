@@ -2,6 +2,7 @@ tags
 test.sh
 .luarc.json
 nvim
+.nvimlog
 
 # In your personal fork, you likely want to comment this, since it's recommended to track
 # lazy-lock.json in version control - see https://lazy.folke.io/usage/lockfile
